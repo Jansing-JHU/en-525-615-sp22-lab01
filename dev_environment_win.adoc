@@ -1,0 +1,259 @@
+:toc:
+:toclevels: 5
+:sectnums:
+:sectnumlevels: 5
+:icons: font
+:source-highlighter: highlight.js
+
+= EN.525.615 - Window Development Environment Setup
+
+
+This document will guide you in setting up a development environment for Windows.
+
+INFO:  Ask questions as needed in the `Lab 1 Discussions` area.
+
+== Overview
+
+The following Applications will be used:
+
+* STM32CubeIDE
+  ** Eclipse Based Integrated Development extended for STM32 Devices
+  ** https://www.st.com/en/development-tools/stm32cubeide.html
+* Chocolatey
+  ** A Windows Package Manage used to install a wide variatey of application and utilities
+  ** Use of Chocolatey is optional, but highly recommended
+  ** https://chocolatey.org/install
+* Git for Windows
+  ** The Git Version Control Utility
+  ** https://git-scm.com/download/win
+* GitExtentions
+  ** GUI Extention for Git
+  ** https://gitextensions.github.io/
+* p4merge
+  ** GUI Based Merge and Diff tool
+  ** https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge
+* mingw-w64
+  ** GCC for Windows 64 & 32 bits
+  ** http://mingw-w64.org/
+* CoreUtils for Windows
+  ** GNU Core Utilities are the basic file, shell and text manipulation utilities of the GNU operating system ported to Windows
+  ** https://sourceforge.net/projects/gnuwin32/files/coreutils/5.3.0/coreutils-5.3.0-bin.zip/download
+* Tera Term
+  ** Open source terminal emulator used for serial/uart communication
+  ** https://osdn.net/projects/ttssh2/releases/72009
+* Node Package Manager
+** Required to install XPack
+** https://www.npmjs.com/get-npm
+* xPack Package Manager
+  ** Used to install QEMU/ARM Eclipse Tools
+  ** https://www.npmjs.com/package/xpm
+* QEMU Arm xPack
+  ** Open-source multi-platform emulator used to simulate the development board in early labs
+  ** https://xpack.github.io/qemu-arm/
+
+=== Download and Install STM32CubeIDE
+
+STM32CubeIDE is an Eclipse based Integrated Development Environment.
+STM32CubeIDE integrates the popular Eclipse IDE, STM32CubeMX Configuration Tool, STM32 Arm Cross-Compiler, and the ST-Link Debugger into one package.
+
+You will need a ST.com user account to be able to download the STM32CubeIDE.
+Go to the URL below to create an account:
+
+https://www.st.com/content/st_com/en/user-registration.html
+
+Download the latest version of the STM32CubeIDE software package from the following location:
+
+https://www.st.com/en/development-tools/stm32cubeide.html
+
+Navigate to the `Get Software` section and Click on the `Get Software` box for the STM32CubeIDE-Win installer.
+
+image::images\dev_environment-2bd01.png[]
+
+
+Extract and run the installation application for STM32CubeIDE that you previous downloaded.
+
+Click `Next` on the Welcome Box
+image::images\dev_environment-e56cb.png[]
+
+Read the License Agreement and select `I Agree`
+image::images\dev_environment-65486.png[]
+
+Select the Installation Location and click `Next`
+It is recommended that you use the default locations.
+
+image::images\dev_environment-f3283.png[]
+
+Verify the `ST-Link drivers` are selected to be installed.
+Click `Install`
+image::images\dev_environment-ebce6.png[]
+
+When prompted that installation is complete click `Next`
+image::images\dev_environment-642f5.png[]
+
+Click Finish to exit from the installation application
+image::images\dev_environment-02edb.png[]
+
+
+
+=== Install QEMU Eclipse Tools
+
+We first need to install some underlying tools to help install the toolchain and the finally launch Eclipse to install the Eclipse Plugin that makes using the tools easy.
+
+
+==== Install Node Package Manager - npm
+
+TIP: For more information see: https://www.npmjs.com/get-npm
+
+
+
+Download the LTS Windows Installer (.msi) for either 32-bit of 64-bit fore NodeJS which includes the Node Package Manager (NPM) from the following location: https://nodejs.org/en/download/
+
+
+image::images\dev_environment_win-43cf1.png[]
+
+Execute the downloaded installer and accept all the default settings.
+
+
+=== Install the xPack Package Manager - xpm
+
+TIP: For more information see: https://www.npmjs.com/package/xpm
+
+*Windows*
+----
+C:\>npm install --global xpm
+C:\>setx Path "%Path%;%APPDATA%\npm"
+----
+
+
+
+//TODO - Move this mac specific doc
+//*MacOSX*
+//----
+//$ mkdir -p "${HOME}"/Library/npm
+//$ npm config set prefix "${HOME}"/Library/npm
+//$ echo 'export PATH="${HOME}"/Library/npm/bin:${PATH}' >> "${HOME}"/.profile
+//$ source "${HOME}"/.profile
+//$ npm install --global xpm
+//----
+
+
+//TODO - Move this linux specific doc
+//*Linux*
+//----
+//$ mkdir -p "${HOME}"/opt/npm
+//$ npm config set prefix "${HOME}"/opt/npm
+//$ echo 'export PATH="${HOME}"/opt/npm/bin:${PATH}' >> "${HOME}"/.profile
+//$ source "${HOME}"/.profile
+//$ npm install --global xpm
+//----
+
+
+=== Install gnu-mcu-eclipse/qemu and gnu-mcu-eclipse/arm-none-eabi-gcc
+
+TIP: For more information see: https://gnu-mcu-eclipse.github.io/install/
+
+TIP: For more information see: https://gnu-mcu-eclipse.github.io/qemu/install/
+
+TIP: For more information see: https://gnu-mcu-eclipse.github.io/windows-build-tools/install/
+
+With xpm now installed, you should be able to run the follow commands:
+
+
+
+*All Operating Systems*
+----
+$ xpm install --global @xpack-dev-tools/qemu-arm@latest
+$ xpm install --global @xpack-dev-tools/windows-build-tools@latest
+----
+
+This will always install the latest available version, in the central xPacks repository, which is a platform dependent folder:
+
+* Windows: %APPDATA%\xPacks (e.g. C:\Users\gcrum\AppData\Roaming\xPacks)
+
+//TODO: move
+//* macOS: ${HOME}/Library/xPacks
+//* GNU/Linux: ${HOME}/opt/xPacks
+
+
+=== Install the GNU MCU Eclipse Plugin
+
+
+Tip: For more information see https://gnu-mcu-eclipse.github.io/plugins/install/
+
+* From inside Eclipse (i.e. STM32CubeIDE)
+* go to the Eclipse menu → Help → Eclipse Marketplace…,
+* find **Eclipse Embedded CDT** and press install
+
+image::images\dev_environment_win-34d01.png[]
+
+When prompted ensure the following packages are selected:
+
+image::images\dev_environment_win-958a5.png[]
+
+Accept the license aggreement and select `Finish`
+
+image::images\dev_environment_win-f2e69.png[]
+
+== ADALM2000 and Scopy
+
+The lab kit includes the ADALM2000 (M2K) Active Learning Module USB-Powered multifunctional lab tool.
+
+image::images\dev_environment-b7d56.png[]
+
+ADALM2000 has the following features:
+
+* Two-channel USB digital oscilloscope
+* Two-channel arbitrary function generator
+* 16-channel digital logic analyzer (3.3V CMOS and 1.8V or 5V tolerant, 100MS/s)
+* 16-channel pattern generator (3.3V CMOS, 100MS/s)
+* 16-channel virtual digital I/O
+* Two input/output digital trigger signals for linking multiple instruments (3.3V CMOS)
+* Single channel voltmeter (AC, DC, ±20V)
+* Network analyzer – Bode, Nyquist, Nichols transfer diagrams of a circuit. Range: 1Hz to 10MHz
+* Spectrum Analyzer – power spectrum and spectral measurements (noise floor, SFDR, SNR, THD, etc.)
+* Digital Bus Analyzers (SPI, I²C, UART, Parallel)
+* Two programmable power supplies (0…+5V , 0…-5V)
+
+TIP: For more information check out their wiki: https://wiki.analog.com/university/tools/m2k
+
+
+The Scopy GUI Application is used to control the ADALM2000 device.
+Follow the detailed installations instructions at the URL below to install Scopy.
+
+https://wiki.analog.com/university/tools/m2k/scopy
+
+
+==== Chocolatey
+
+The Chocolatey Package Manager for windows will be used to quickly and easily install other required applications.
+The use of Chocolatey is optional, but highly recommended.
+You can install all the required tools without using Chocolatey by following the
+provided links and following the download/install instructions provided by the developers.
+
+To install Chocolatey and most packages from above:
+Open Power Shell as Administrator and run the following commands
+
+```
+Get-ExecutionPolicy
+Set-ExecutionPolicy AllSigned
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
+
+Chocolatey should now be installed.
+You can verify it is install and working by using the help command:
+```
+choco -?
+```
+
+Now that Chocolatey is installed, you can install the remaining packages:
+
+```
+choco install -y git
+choco install -y gitextensions
+choco install -y p4merge
+choco install -y mingw
+choco install -y gnuwin32-coreutils.portable
+choco install -y teraterm
+```
+
+TIP: You can search for other packages that can be install with Chocolatey here: https://chocolatey.org/packages/
