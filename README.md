@@ -101,3 +101,76 @@ Once you've selected the workspace, an empty workspace will be presented.
 
 ![](media/lab1-96f50.png)
 
+### Create a C\C++ Project
+
+* Select `File`->``New``->``C/C++ Project``
+* Select `C Managed Build` and Click `Next`
+
+![](media/lab1-c69de.png)
+
+* For `Project Name:` enter `Hello_world_Tutorial`
+* For `Project type:` select `Hellow World ANSI C Project`
+* For `Toolchains:` select `MingGW GCC`, or `MacOSX GCC` if on a Mac
+* Click `Next`
+
+These steps may vary somewhat depending on the platform you're using (Windows vs Mac vs Linux).
+
+![](media/lab1-bf9e1.png)
+
+* Enter your Name in the `Author` Box
+* Click `Finish`
+
+![](media/lab1-a7ba5.png)
+
+* Cick the 'X' on the Information Center Tab to view the project workspace
+
+You should now see a workspace similar to the image below.
+
+![](media/lab1-d2757.png)
+
+### Build the Project
+
+* Under the Project Explorer Tab
+* Right Click `Hello_World_Tutorial`
+* Click `Build Project`
+
+In the CDT Build Console you will see the compiler build log with 0 error and 0 warnings.
+
+![](media/lab1-9a1cd.png)
+
+### Create a Run\Debug Configuration for the Project
+
+* With `Hello_World_Tutorial` selected in the `Project Explorer` tab
+* Select ``Run``->``Debug Configurations...``
+
+![](media/lab1-9460c.png)
+
+* The `Debug Configurations` Dialog Box should appear
+* Double Click on `C/C++ Application`
+
+![](media/lab1-28550.png)
+
+If you launched the dialog with the correct project selected the `Project` and `C/C++ Application` fields.
+You can also fill it in manually or change it by clicking the `Browse...` button.
+
+![](media/lab1-f5333.png)
+
+* Click the `Debugger` Tab and verify a few setting:
+  - `Stop on start at:` is checked and `main` is in the entry
+  - `GDB Debugger:` has `gdb` entered
+  - Click `Debug`
+
+![](media/lab1-6de1f.png)
+
+* You will be asked to switch to the `Debug perspective`
+* Click `Switch`
+
+![](media/lab1-b36f7.png)
+
+Your application should now be running and paused at the first executable line of the program.
+
+![](media/lab1-8d4fb.png)
+
+* Press `F8` or the `Resume` Button to resume the program.
+
+No lab report is required for this laboratory.  Make sure your repository is up-to-date and fully committed before the due date.
