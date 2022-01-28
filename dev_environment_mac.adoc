@@ -53,7 +53,7 @@ To install these tools all at once run the following command in a terminal:
 
 This will open a prompt asking you to install xcode dev tools, press install.
 
-image::images/macdev_environment-xcode.png[align="center"]
+image::media/macdev_environment-xcode.png[align="center"]
 
 After this is done, try running `gcc --version` and/or `git --version` in the terminal to see if gcc/git is properly installed.
 
@@ -94,17 +94,17 @@ https://www.st.com/en/development-tools/stm32cubeide.html
 
 Navigate to the `Get Software` section and Click on the `Get Software` box for the STM32CubeIDE-Mac installer.
 
-image::images/dev_environment-2bd01.png[align="center"]
+image::media/dev_environment-2bd01.png[align="center"]
 
 Extract and run the dmg for STM32CubeIDE that you previous downloaded.
 
 Read the License Agreement and select `I Agree`
 
-image::images/macdev_environment-welcome.png[align="center",width=75%]
+image::media/macdev_environment-welcome.png[align="center",width=75%]
 
 Follow the directions on the following dialogue. First double click the pkg file to install the stlink drivers (for connecting to the device itself). Then drag the app to the Applications folder to install the IDE.
 
-image::images/macdev_environment-install1.png[align="center",width=75%]
+image::media/macdev_environment-install1.png[align="center",width=75%]
 
 == Install QEMU Eclipse Tools
 
@@ -132,15 +132,15 @@ Tip: For more information see https://gnu-mcu-eclipse.github.io/plugins/install/
 * Go to the Eclipse menu → Help → Eclipse Marketplace…,
 * Find **Eclipse Embedded CDT** and press install
 
-image::images/macdev_environment-eclips1.png[align="center",width=75%]
+image::media/macdev_environment-eclips1.png[align="center",width=75%]
 
 When prompted ensure the following packages are selected:
 
-image::images/macdev_environment-eclips2.png[align="center",width=75%]
+image::media/macdev_environment-eclips2.png[align="center",width=75%]
 
 Accept the license aggreement and select `Finish`
 
-image::images/macdev_environment-eclips3.png[align="center",width=75%]
+image::media/macdev_environment-eclips3.png[align="center",width=75%]
 
 <<<
 
@@ -148,7 +148,7 @@ image::images/macdev_environment-eclips3.png[align="center",width=75%]
 
 The lab kit includes the ADALM2000 (M2K) Active Learning Module USB-Powered multifunctional lab tool.
 
-image::images/dev_environment-b7d56.png[align="center",width=75%]
+image::media/dev_environment-b7d56.png[align="center",width=75%]
 
 ADALM2000 has the following features:
 
