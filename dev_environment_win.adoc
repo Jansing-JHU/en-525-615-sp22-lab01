@@ -67,31 +67,31 @@ https://www.st.com/en/development-tools/stm32cubeide.html
 
 Navigate to the `Get Software` section and Click on the `Get Software` box for the STM32CubeIDE-Win installer.
 
-image::images\dev_environment-2bd01.png[]
+image::media\dev_environment-2bd01.png[]
 
 
 Extract and run the installation application for STM32CubeIDE that you previous downloaded.
 
 Click `Next` on the Welcome Box
-image::images\dev_environment-e56cb.png[]
+image::media\dev_environment-e56cb.png[]
 
 Read the License Agreement and select `I Agree`
-image::images\dev_environment-65486.png[]
+image::media\dev_environment-65486.png[]
 
 Select the Installation Location and click `Next`
 It is recommended that you use the default locations.
 
-image::images\dev_environment-f3283.png[]
+image::media\dev_environment-f3283.png[]
 
 Verify the `ST-Link drivers` are selected to be installed.
 Click `Install`
-image::images\dev_environment-ebce6.png[]
+image::media\dev_environment-ebce6.png[]
 
 When prompted that installation is complete click `Next`
-image::images\dev_environment-642f5.png[]
+image::media\dev_environment-642f5.png[]
 
 Click Finish to exit from the installation application
-image::images\dev_environment-02edb.png[]
+image::media\dev_environment-02edb.png[]
 
 
 
@@ -109,7 +109,7 @@ TIP: For more information see: https://www.npmjs.com/get-npm
 Download the LTS Windows Installer (.msi) for either 32-bit of 64-bit fore NodeJS which includes the Node Package Manager (NPM) from the following location: https://nodejs.org/en/download/
 
 
-image::images\dev_environment_win-43cf1.png[]
+image::media\dev_environment_win-43cf1.png[]
 
 Execute the downloaded installer and accept all the default settings.
 
@@ -184,21 +184,21 @@ Tip: For more information see https://gnu-mcu-eclipse.github.io/plugins/install/
 * go to the Eclipse menu → Help → Eclipse Marketplace…,
 * find **Eclipse Embedded CDT** and press install
 
-image::images\dev_environment_win-34d01.png[]
+image::media\dev_environment_win-34d01.png[]
 
 When prompted ensure the following packages are selected:
 
-image::images\dev_environment_win-958a5.png[]
+image::media\dev_environment_win-958a5.png[]
 
 Accept the license aggreement and select `Finish`
 
-image::images\dev_environment_win-f2e69.png[]
+image::media\dev_environment_win-f2e69.png[]
 
 == ADALM2000 and Scopy
 
 The lab kit includes the ADALM2000 (M2K) Active Learning Module USB-Powered multifunctional lab tool.
 
-image::images\dev_environment-b7d56.png[]
+image::media\dev_environment-b7d56.png[]
 
 ADALM2000 has the following features:
 
